@@ -16,9 +16,8 @@ namespace PizzaCalculator.iOS
 
 		    CalculateButton.TouchUpInside += (sender, args) =>
 		    {
-		        var people = int.Parse(PeopleEntry.Text);
-		        var pizzas = people / 3;
-		        PizzaCountLabel.Text = $"Pizzas needed {pizzas}";
+		        var message = PizzaCalculator.Calculate(PeopleEntry.Text);
+		        PizzaCountLabel.Text = message;
 		        PeopleEntry.ResignFirstResponder();
 		    };
 		}

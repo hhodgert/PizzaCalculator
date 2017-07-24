@@ -25,9 +25,8 @@ namespace PizzaCalculator.Droid
 
             calculate.Click += (sender, args) =>
             {
-                var people = int.Parse(peopleEntry.Text);
-                var pizzas = people / 3;
-                pizzaCount.Text = $"Pizzas needed {pizzas}";
+                var message = PizzaCalculator.Calculate(peopleEntry.Text);
+                pizzaCount.Text = message;
             };
 		}
 	}
