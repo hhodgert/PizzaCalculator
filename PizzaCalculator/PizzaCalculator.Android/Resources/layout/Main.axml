@@ -4,11 +4,21 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-<Button  
-    android:id="@+id/myButton"
-    android:layout_width="match_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
+  <EditText
+    android:id="@+id/peopleEntry"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    />
+  <Button
+      android:id="@+id/calculateButton"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/hello"
+    />
+  <TextView
+    android:id="@+id/pizzaCountLabel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     />
 </LinearLayout>
 
