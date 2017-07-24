@@ -6,8 +6,6 @@ namespace PizzaCalculator.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		int count = 1;
-
 		public ViewController (IntPtr handle) : base (handle)
 		{
 		}
@@ -15,12 +13,14 @@ namespace PizzaCalculator.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			// Perform any additional setup after loading the view, typically from a nib.
-			Button.AccessibilityIdentifier = "myButton";
-			Button.TouchUpInside += delegate {
-				var title = string.Format ("{0} clicks!", count++);
-				Button.SetTitle (title, UIControlState.Normal);
-			};
+
+		    CalculateButton.TouchUpInside += (sender, args) =>
+		    {
+		        var people = int.Parse(PeopleEntry.Text);
+		        var pizzas = people / 3;
+		        PizzaCountLabel.Text = $"Pizzas needed {pizzas}";
+		        PeopleEntry.ResignFirstResponder();
+		    };
 		}
 
 		public override void DidReceiveMemoryWarning ()
@@ -28,6 +28,6 @@ namespace PizzaCalculator.iOS
 			base.DidReceiveMemoryWarning ();
 			// Release any cached data, images, etc that aren't in use.
 		}
-	}
+    }
 }
 
