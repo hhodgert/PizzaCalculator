@@ -37,6 +37,13 @@
                                 <rect key="contentStretch" x="0.0" y="0.0" width="1" height="5"/>
                                 <color key="backgroundColor" colorSpace="calibratedRGB" red="1" green="1" blue="0" alpha="1"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66" misplaced="YES">
+                                <rect key="frame" x="231" y="269" width="139" height="30"/>
+                                <state key="normal" title="Call the Pizza Parlor">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -48,12 +55,15 @@
                             <constraint id="54" firstItem="oBE-Ac-vcx" firstAttribute="top" secondItem="4" secondAttribute="bottom" constant="42"/>
                             <constraint id="55" firstItem="5" firstAttribute="top" secondItem="oBE-Ac-vcx" secondAttribute="bottom" constant="37"/>
                             <constraint id="56" firstItem="4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="59"/>
+                            <constraint id="67" firstItem="66" firstAttribute="top" secondItem="5" secondAttribute="bottom" constant="30"/>
+                            <constraint id="68" firstItem="66" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="CalculateButton" destination="oBE-Ac-vcx" id="name-outlet-oBE-Ac-vcx"/>
                         <outlet property="PeopleEntry" destination="4" id="name-outlet-4"/>
                         <outlet property="PizzaCountLabel" destination="5" id="name-outlet-5"/>
+                        <outlet property="CallPizzaParlorButton" destination="66" id="name-outlet-66"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

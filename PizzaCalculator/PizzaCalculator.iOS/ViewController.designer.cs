@@ -20,6 +20,10 @@ namespace PizzaCalculator.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton CallPizzaParlorButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PeopleEntry { get; set; }
 
         [Outlet]
@@ -31,6 +35,11 @@ namespace PizzaCalculator.iOS
             if (CalculateButton != null) {
                 CalculateButton.Dispose ();
                 CalculateButton = null;
+            }
+
+            if (CallPizzaParlorButton != null) {
+                CallPizzaParlorButton.Dispose ();
+                CallPizzaParlorButton = null;
             }
 
             if (PeopleEntry != null) {

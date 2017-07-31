@@ -6,7 +6,7 @@ namespace PizzaCalculator.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-	    private PizzaCalculator _pizzaCalculator;
+	    private readonly PizzaCalculator _pizzaCalculator;
 
 	    public ViewController (IntPtr handle) : base (handle)
 		{
@@ -23,6 +23,10 @@ namespace PizzaCalculator.iOS
 		        PizzaCountLabel.Text = message;
 		        PeopleEntry.ResignFirstResponder();
             };
+		    CallPizzaParlorButton.TouchUpInside += (sender, args) =>
+		    {
+		        _pizzaCalculator.CallPizzaParlor();
+		    };
 		}
 
 		public override void DidReceiveMemoryWarning ()

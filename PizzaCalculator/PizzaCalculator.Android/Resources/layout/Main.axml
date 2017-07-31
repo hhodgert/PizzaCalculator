@@ -8,12 +8,13 @@
     android:id="@+id/peopleEntry"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:inputType="number"
     />
   <Button
       android:id="@+id/calculateButton"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
-      android:text="@string/hello"
+      android:text="@string/calculate"
     />
   <TextView
     android:id="@+id/pizzaCountLabel"
@@ -24,7 +25,7 @@
     android:id="@+id/callPizzaParlorButton"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/hello"
+    android:text="@string/callpizzaparlor"
   />
 </LinearLayout>
 
