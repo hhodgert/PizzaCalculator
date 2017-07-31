@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PizzaCalculator
+﻿namespace PizzaCalculator
 {
     public class PizzaCalculator
     {
-        public static string Calculate(string peopleString)
+        private readonly IPhoneDialer _phoneDialer;
+
+        public PizzaCalculator(IPhoneDialer phoneDialer)
+        {
+            _phoneDialer = phoneDialer;
+        }
+        public string Calculate(string peopleString)
         {
             int people;
             if (int.TryParse(peopleString, out people))
@@ -17,6 +17,11 @@ namespace PizzaCalculator
                 return $"Pizzas needed {pizzas}";
             }
             return "No people entered";
+        }
+
+        public void CallPizzaParlor()
+        {
+            _phoneDialer.Call("5035551212");
         }
     }
 }

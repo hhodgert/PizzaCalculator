@@ -6,8 +6,11 @@ namespace PizzaCalculator.iOS
 {
 	public partial class ViewController : UIViewController
 	{
-		public ViewController (IntPtr handle) : base (handle)
+	    private PizzaCalculator _pizzaCalculator;
+
+	    public ViewController (IntPtr handle) : base (handle)
 		{
+            _pizzaCalculator = new PizzaCalculator(new PhoneDialer(this));
 		}
 
 		public override void ViewDidLoad ()
@@ -16,10 +19,10 @@ namespace PizzaCalculator.iOS
 
 		    CalculateButton.TouchUpInside += (sender, args) =>
 		    {
-		        var message = PizzaCalculator.Calculate(PeopleEntry.Text);
+		        var message = _pizzaCalculator.Calculate(PeopleEntry.Text);
 		        PizzaCountLabel.Text = message;
 		        PeopleEntry.ResignFirstResponder();
-		    };
+            };
 		}
 
 		public override void DidReceiveMemoryWarning ()

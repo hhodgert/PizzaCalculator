@@ -9,27 +9,34 @@ using Android.OS;
 
 namespace PizzaCalculator.Droid
 {
-	[Activity (Label = "PizzaCalculator.Android", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
-	{
-		protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
+    [Activity(Label = "Pizza to Calc", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        private PizzaCalculator _pizzaCalculator;
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
 
-		    var peopleEntry = FindViewById<EditText>(Resource.Id.peopleEntry);
-		    var calculate = FindViewById<Button>(Resource.Id.calculateButton);
-		    var pizzaCount = FindViewById<TextView>(Resource.Id.pizzaCountLabel);
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
 
+            var peopleEntry = FindViewById<EditText>(Resource.Id.peopleEntry);
+            var calculate = FindViewById<Button>(Resource.Id.calculateButton);
+            var pizzaCount = FindViewById<TextView>(Resource.Id.pizzaCountLabel);
+            var callParlor = FindViewById<Button>(Resource.Id.callPizzaParlorButton);
+            
+            _pizzaCalculator = new PizzaCalculator(new PhoneDialer(this));
             calculate.Click += (sender, args) =>
             {
-                var message = PizzaCalculator.Calculate(peopleEntry.Text);
+                var message = _pizzaCalculator.Calculate(peopleEntry.Text);
                 pizzaCount.Text = message;
             };
-		}
-	}
+            callParlor.Click += (sender, args) =>
+            {
+                _pizzaCalculator.CallPizzaParlor();
+            };
+        }
+    }
 }
-
 
